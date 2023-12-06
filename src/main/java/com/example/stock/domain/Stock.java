@@ -23,6 +23,13 @@ public class Stock {
         this.quantity = quantity;
     }
 
+    public void decrease(Long quantity) {
+        if(this.quantity - quantity < 0) {
+            throw new RuntimeException("재고는 0개미만이 될 을수 없습니다.");
+        }
+        this.quantity -= quantity;
+    }
+
     public Long getQuantity() {
         return quantity;
     }
